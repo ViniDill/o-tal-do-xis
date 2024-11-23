@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import Theme from "../../Theme";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -31,7 +32,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   width: 100%;
-  background-color: grey;
+  background-color: ${Theme.colors.Color3};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,14 +67,16 @@ export const Text = styled.div`
     `}
 
     h1{
-        text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         font-size: 45px;
         margin-bottom: 25px;
+        color: ${Theme.colors.neutrals70};
     }
 
     p {
         font-size: 20px;
         text-align: justify;
+        color: ${Theme.colors.neutrals70};
     }
 `
 
@@ -84,7 +87,6 @@ export const Image = styled.div`
     img {
         width: 355px;
         height: 520px;
-        border: 5px solid #fff;
         margin: auto;
 
         ${media.lessThan("large")`

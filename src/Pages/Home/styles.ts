@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Theme from "../../Theme";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -33,13 +34,13 @@ export const Container = styled.div`
   }
 
   h1 {
-    color: #FFC506;
+    color: ${Theme.colors.Color5};
     font-size: 64px;
     font-weight: bold;
   }
 
   p {
-    color: #A6A6A6;
+    color: ${Theme.colors.neutrals40};
     font-size: 36px;
     font-weight: bold;
   }

@@ -33,39 +33,35 @@ const getIcon = (type: ContactType) => {
   }
 };
 
-const getLink = (type: ContactType, value: string, label: string) => {
+const getHref = (type: ContactType, value: string) => {
   switch (type) {
     case "email":
-      return <a href={`mailto:${value}`}>{label}</a>;
+      return `mailto:${value}`;
     case "phone":
-      return <a href={`tel:${value}`}>{label}</a>;
+      return `tel:${value}`;
     case "whatsapp":
-      return (
-        <a
-          href={`https://wa.me/${value}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {label}
-        </a>
-      );
+      return `https://wa.me/${value}`;
     case "facebook":
     case "instagram":
-      return (
-        <a href={value} target="_blank" rel="noopener noreferrer">
-          {label}
-        </a>
-      );
+      return value;
     default:
-      return <span>{label}</span>;
+      return "#";
   }
 };
 
 const ContactCard: React.FC<ContactCardProps> = ({ type, value, label }) => {
+  const href = getHref(type, value);
+
+  const handleClick = () => {
+    if (href !== "#") {
+      window.open(href, type === "email" || type === "phone" ? "_self" : "_blank");
+    }
+  };
+
   return (
-    <Card>
+    <Card onClick={handleClick} role="button" tabIndex={0}>
       <Icon>{getIcon(type)}</Icon>
-      <Text>{getLink(type, value, label)}</Text>
+      <Text>{label}</Text>
     </Card>
   );
 };

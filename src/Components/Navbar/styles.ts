@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import Theme from "../../Theme";
 
 export const Container = styled.nav`
-  background-color: white;
+  background-color: ${Theme.colors.Color4};
   color: black;
   position: fixed;
   top: 0;

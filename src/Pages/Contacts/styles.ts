@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import Theme from "../../Theme";
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -32,7 +33,7 @@ export const Container = styled.div`
 
 export const Title = styled.div`
     height: 250px;
-    background-color: pink;
+    background-color: ${Theme.colors.Color3};
     margin-top: 80px;
     padding: 40px;
     z-index: 1;
@@ -40,7 +41,7 @@ export const Title = styled.div`
 
     h1 {
     font-size: 64px;
-    color: black;
+    color: ${Theme.colors.neutrals70};
     font-weight: 800;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
